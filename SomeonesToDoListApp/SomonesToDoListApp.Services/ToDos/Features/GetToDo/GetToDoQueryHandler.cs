@@ -4,7 +4,7 @@ using SomonesToDoListApp.Services.ToDos.Dtos;
 
 namespace SomonesToDoListApp.Services.ToDos.Features.GetToDo
 {
-    public class GetToDoQueryHandlerpublic : IRequestHandler<GetToDoQuery, GetToDoDto>
+    public class GetToDoQueryHandlerpublic : IRequestHandler<GetToDoQuery, GetToDoDto?>
     {
         private readonly ITodoRepository _repository;
 
@@ -13,10 +13,10 @@ namespace SomonesToDoListApp.Services.ToDos.Features.GetToDo
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
-        public async Task<GetToDoDto> Handle(GetToDoQuery request, CancellationToken cancellationToken)
+        public async Task<GetToDoDto?> Handle(GetToDoQuery request, CancellationToken cancellationToken)
         {
             var todo = await _repository.GetAsync(request.Id);
-            return todo.ToDto();
+            return todo?.ToDto() ?? null;
         }
     }
 }

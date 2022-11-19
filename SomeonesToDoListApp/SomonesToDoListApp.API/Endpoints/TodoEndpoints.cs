@@ -25,12 +25,12 @@ namespace SomonesToDoListApp.API.Endpoints
 
             app.MapGet(BaseRoute, GetAllTodosAsync)
                 .WithName("GetToDos")
-                .Produces<IEnumerable<ToDoDto>>(200)
+                .Produces<IEnumerable<GetToDoDto>>(200)
                 .WithTags(Tag);
 
             app.MapGet($"{BaseRoute}/{{id}}", GetTodoAsync)
                 .WithName("GetTodo")
-                .Produces<ToDoDto>(200).Produces(404)
+                .Produces<GetToDoDto>(200).Produces(404)
                 .WithTags(Tag);
 
             app.MapPut($"{BaseRoute}", UpdateTodoAsync)
