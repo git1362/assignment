@@ -9,6 +9,18 @@
 ### Features Folder
 this folder include application' features. It's using mediator pattern and mostly organized by Vertical architecture mindset, each request considered as a feature.
 
+    ToDos
+      -> Features
+        -> CreateToDo
+        -> GetToDo
+        -> GetToDos
+        -> UpdateToDo
+
+# SomeonesToDoListApp.Web
+### Folder Structure
+ - components folder include necessary component for making react application to work.
+ - infrastructure folder include necessary logic for communicating with backend in form of HTTP request.
+
 # How to Run
 ### SomonesToDoListApp.API
 you can either use 
