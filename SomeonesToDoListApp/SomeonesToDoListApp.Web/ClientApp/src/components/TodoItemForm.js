@@ -9,7 +9,7 @@ export default function TodoItemForm({ todo, submitted }) {
     }
 
     return (
-        <form className="mt-2">
+        <form className="mt-2" onSubmit={onSubmit}>
             <div className="form-group">
                 <label htmlFor="title">Change Title</label>
                 <input
@@ -24,8 +24,7 @@ export default function TodoItemForm({ todo, submitted }) {
             </div>
             <button
                 className="btn btn-primary mt-2"
-                disabled={!todoState.toDoItemName}
-                onClick={onSubmit}>
+                type="submit">
                 Submit
             </button>
         </form>

@@ -2,8 +2,8 @@
 
 export default function Spinner() {
     return (
-        <div className="">
-            <div className=""></div>
+        <div className="spinner-border text-primary" role="status">
+            <div className="sr-only">Loading...</div>
         </div>
     );
 }

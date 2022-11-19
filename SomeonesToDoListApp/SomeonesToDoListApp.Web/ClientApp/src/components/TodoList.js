@@ -3,6 +3,7 @@ import useFetch from "../infrastructure/http/useFetch";
 import Spinner from "./Spinner";
 import PageNotFound from "./PageNotFound";
 import TodoItem from "./TodoItem";
+import { Link } from "react-router-dom";
 
 export default function TodoList() {
     const { data: todos, loading, error } = useFetch('/todos');
@@ -27,6 +28,12 @@ export default function TodoList() {
                     ))}
                 </tbody>
             </table>
+
+            <div>
+                <Link to={'/createItem'}>
+                    <span>Create New Todo Item</span>
+                </Link>
+            </div>
         </div>
     );
 }
